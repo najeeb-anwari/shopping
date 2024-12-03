@@ -9,7 +9,7 @@
     <title> KNN </title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="/assets/images/favicon.png" />
+    <link rel="shortcut icon" href="{{ asset('/public_content/image/favicon-32x32.png') }}" />
 
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com/">
