@@ -5,8 +5,8 @@
     @if($second_category)
         @livewire('products.popular-products', ['category' => $second_category])
     @endif
-    @if($seventh_category)
-        @livewire('products.popular-products', ['category' => $seventh_category])
+    @if($third_category)
+        @livewire('products.popular-products', ['category' => $third_category])
 
     @endif
 

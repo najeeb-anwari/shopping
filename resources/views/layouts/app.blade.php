@@ -657,9 +657,6 @@
                             <i class="bi bi-bell icon-lg"></i>
                         </a>
                     </li>
-                    @can('modify_cart')
-                        @livewire('components.cart-counter')
-                    @endcan
                 </ul>
             </div>
             <!-- Header mobile buttons -->
