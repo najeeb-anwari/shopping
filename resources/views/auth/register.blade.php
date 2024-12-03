@@ -1,7 +1,7 @@
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <x-jet-authentication-card-logo />
+            <img src="{{ asset('public_content/image/loader_logo.png') }}" alt="KNN Logo">
         </x-slot>
 
         <x-jet-validation-errors class="mb-4" />
