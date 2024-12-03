@@ -45,7 +45,7 @@
 
     <!-- preloader -->
     <div class="preloader">
-        <img src="https://vetra.laborasyon.com/assets/images/logo.svg" alt="logo">
+        <img src="/assets/images/knn.jpg" alt="logo">
         <div class="preloader-icon"></div>
     </div>
     <!-- ./ preloader -->
@@ -369,7 +369,8 @@
             <ul class="list-group list-group-flush">
                 <li class="list-group-item px-0 border-0">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1" checked>
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault1"
+                            checked>
                         <label class="form-check-label" for="flexCheckDefault1">
                             Remember next visits
                         </label>
@@ -377,7 +378,8 @@
                 </li>
                 <li class="list-group-item px-0 border-0">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2" checked>
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault2"
+                            checked>
                         <label class="form-check-label" for="flexCheckDefault2">
                             Enable report generation.
                         </label>
@@ -385,7 +387,8 @@
                 </li>
                 <li class="list-group-item px-0 border-0">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault3" checked>
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault3"
+                            checked>
                         <label class="form-check-label" for="flexCheckDefault3">
                             Allow notifications.
                         </label>
@@ -401,7 +404,8 @@
                 </li>
                 <li class="list-group-item px-0 border-0">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault5" checked>
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault5"
+                            checked>
                         <label class="form-check-label" for="flexCheckDefault5">
                             Speed up demands
                         </label>
@@ -434,7 +438,8 @@
         <div class="sidebar-content">
             <form class="mb-4">
                 <div class="input-group mb-3">
-                    <input type="text" class="form-control" placeholder="Search" aria-describedby="button-search-addon">
+                    <input type="text" class="form-control" placeholder="Search"
+                        aria-describedby="button-search-addon">
                     <button class="btn btn-outline-light" type="button" id="button-search-addon">
                         <i class="bi bi-search"></i>
                     </button>
@@ -557,7 +562,8 @@
                     <a href="/user/profile" class="dropdown-item d-flex align-items-center">
                         <i class="bi bi-person dropdown-item-icon"></i> Profile
                     </a>
-                    <form method="POST" class="dropdown-item d-flex align-items-center" action="{{ route('logout') }}">
+                    <form method="POST" class="dropdown-item d-flex align-items-center"
+                        action="{{ route('logout') }}">
                         @csrf
                         <button type="submit" class=" text-danger">
                             <i class="bi bi-box-arrow-right dropdown-item-icon"></i> Logout
@@ -586,17 +592,16 @@
 
                 </li>
                 @can('modify_categories')
-                <li>
-                    <a href="/categories">
-                        <span class="nav-link-icon">
-                            <i class="bi bi-boxes"></i>
+                    <li>
+                        <a href="/categories">
+                            <span class="nav-link-icon">
+                                <i class="bi bi-boxes"></i>
 
-                        </span>
-                        <span>Categories</span>
-                    </a>
+                            </span>
+                            <span>Categories</span>
+                        </a>
 
-                </li>
-
+                    </li>
                 @endcan
                 <li>
                     <a href="/products">
@@ -651,7 +656,7 @@
                         </a>
                     </li>
                     @can('modify_cart')
-                    @livewire('components.cart-counter')
+                        @livewire('components.cart-counter')
                     @endcan
                 </ul>
             </div>
@@ -707,9 +712,7 @@
     <!-- Main Javascript file -->
     <script src="/dist/js/app.min.js"></script>
 
-    <script>
-
-    </script>
+    <script></script>
 </body>
 
 </html>
