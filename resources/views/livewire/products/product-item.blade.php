@@ -13,14 +13,7 @@
                 <del class="text-muted" x-show="{{ $product->old_price ? true : false }}" >؋{{ $product->old_price }}</del>
                 <h6 class="mb-0">؋{{ $product->price }}</h6>
             </div>
-            <div class="d-flex gap-1 mb-3">
-                <i class="bi bi-star-fill text-warning"></i>
-                <i class="bi bi-star-fill text-warning"></i>
-                <i class="bi bi-star-fill text-warning"></i>
-                <i class="bi bi-star-fill text-warning"></i>
-                <i class="bi bi-star-fill text-muted"></i>
-                <span>(25)</span>
-            </div>
+            @livewire('components.review-rating', ['product_id' => $product->id])
             @can('modify_cart')
             <div class="d-flex">
                 <button wire:click="$emit('addCart',{{ $product->id }})" class="btn btn-primary btn-sm">Add to
