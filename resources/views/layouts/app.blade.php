@@ -685,7 +685,7 @@
 
         <!-- content-footer -->
         <footer class="content-footer">
-            <div>© 2022 Online Shopping </div>
+            <div>© {{ now()->year }} Online Shopping </div>
             <div>
                 <nav class="nav gap-4">
                     <a href="#" class="nav-link">Get Help</a>
