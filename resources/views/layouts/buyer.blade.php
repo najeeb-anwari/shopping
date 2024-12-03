@@ -1,11 +1,11 @@
 <!doctype html>
 <html lang="en">
 
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>@stack('title')</title>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>@stack('title')</title>
     <!-- Favicon Icon Css -->
     <link rel="icon" type="image/png" sizes="32x32" href="/public_content/image/favicon-32x32.png">
     <!-- Animation CSS -->
@@ -15,11 +15,12 @@
     <!-- Font Css -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"
-    rel="stylesheet">
+        rel="stylesheet">
     <link href="/public_content/css/ionicons.min.css" type="text/css" rel="stylesheet">
 
     <!-- Bootstrap Css -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 
     <!-- Owl Css -->
@@ -61,11 +62,11 @@
                 $categories = App\Models\Category::all();
             @endphp
             <ul class="list-unstyled components">
-                @foreach($categories as $category)
-                <li>
+                @foreach ($categories as $category)
+                    <li>
 
-                    <a href="/categories/{{ $category->id}}/products">{{ $category->name }}</a>
-                </li>
+                        <a href="/categories/{{ $category->id }}/products">{{ $category->name }}</a>
+                    </li>
                 @endforeach
             </ul>
 
@@ -78,48 +79,51 @@
                 <div class="row">
                     <div class="col-md-6">
                         <ul class="header_list text-md-left text-center">
-                            <li><a href="tel:+ 00 123 456 789"><i class="fa fa-phone"></i>+ 00 123 456 789</a></li>
-                            <li><a href="mailto:info@gmail.com"><i class="fa fa-envelope-o"></i>info@gmail.com</a></li>
+                            <li><a href="tel:+93202399923"><i class="fa fa-phone"></i>+93202399923</a></li>
+                            <li><a href="mailto:info@knn.com"><i class="fa fa-envelope-o"></i>info@knn.com</a></li>
                         </ul>
                     </div>
                     <div class="col-md-6">
                         <ul class="header_list text-md-right text-center">
                             @guest
-                            <li><a href="/login">Login</a>
-                            </li>
-                            <li><a href="/register">Register</a>
-                            </li>
+                                <li><a href="/login">Login</a>
+                                </li>
+                                <li><a href="/register">Register</a>
+                                </li>
                             @endguest
                             @auth
-                            @can('buyer_access')
-                            <li><a href="/wishlist">Wishlist</a></li>
-                            <li><a href="/dashboard">Dashboard</a></li>
+                                @can('buyer_access')
+                                    <li><a href="/wishlist">Wishlist</a></li>
+                                    <li><a href="/dashboard">Dashboard</a></li>
+                                @elsecan('seller_access')
+                                    <li><a href="/dashboard">Dashboard</a></li>
+                                @elsecan('admin_access')
+                                    <li><a href="/dashboard">Dashboard</a></li>
+                                @endcan
+                                <li>
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink"
+                                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        My Account
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-dark"
+                                        aria-labelledby="navbarDarkDropdownMenuLink">
+                                        <li><a href="/user/profile" class="dropdown-item d-flex align-items-center">
+                                                <i class="bi bi-person dropdown-item-icon"></i> Profile
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <form method="POST"
+                                                class="dropdown-item d-flex align-items-center justify-content-between"
+                                                action="{{ route('logout') }}">
+                                                @csrf
+                                                <button type="submit" class="btn text-danger ">
+                                                    <i class="bi bi-box-arrow-right dropdown-item-icon"></i> Logout
+                                                </button>
+                                            </form>
+                                        </li>
 
-                            @elsecan('seller_access')
-                            <li><a href="/dashboard">Dashboard</a></li>
-                            @elsecan('admin_access')
-                            <li><a href="/dashboard">Dashboard</a></li>
-                            @endcan
-                            <li>
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    My Account
-                                </a>
-                                <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                                    <li><a href="/user/profile" class="dropdown-item d-flex align-items-center">
-                                            <i class="bi bi-person dropdown-item-icon"></i> Profile
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <form method="POST" class="dropdown-item d-flex align-items-center justify-content-between" action="{{ route('logout') }}">
-                                            @csrf
-                                            <button  type="submit" class="btn text-danger ">
-                                                <i class="bi bi-box-arrow-right dropdown-item-icon"></i> Logout
-                                            </button>
-                                        </form>
-                                    </li>
-
-                                </ul>
-                            </li>
+                                    </ul>
+                                </li>
 
                             @endauth
                         </ul>
@@ -133,7 +137,8 @@
                     <div class="col-md-12">
                         <div class="hm-inner d-sm-flex align-items-center justify-content-between">
                             <div class="header-logo">
-                                <a href="/"><img src="/public_content/image/loader_logo.png" alt="logo"></a>
+                                <a href="/"><img src="/public_content/image/loader_logo.png"
+                                        alt="logo"></a>
                             </div>
                             <form action="/search" class="header-form">
                                 <input name="query" class="search-box" placeholder="Search Product..." required
@@ -146,7 +151,8 @@
                                 @endcan
                                 <div class="d-lg-none mm_icon">
                                     <div class="form-captions" id="search">
-                                        <button type="submit" class="submit-btn-2"><i class="fa fa-search"></i></button>
+                                        <button type="submit" class="submit-btn-2"><i
+                                                class="fa fa-search"></i></button>
                                     </div>
                                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -191,7 +197,7 @@
     <!-- End Header Section -->
 
 
-        @yield('content')
+    @yield('content')
 
 
     <!-- Start Facility Section-->
@@ -261,7 +267,9 @@
     <script src="/public_content/js/popper.min.js" type="text/javascript"></script>
     <!-- Bootstrap js -->
     <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
     <!-- Magnific Popup js -->
     <script src="/public_content/js/jquery.magnific-popup.min.js" type="text/javascript"></script>
 
@@ -289,14 +297,8 @@
     <script src="/public_content/js/mCustomScrollbar.concat.min.js" type="text/javascript"></script>
     <!-- Custom css -->
     <script src="/public_content/js/custom.js" type="text/javascript"></script>
-    <script src="{{ mix('js/app.js') }}" ></script>
+    <script src="{{ mix('js/app.js') }}"></script>
     <script>
-
-
-
-
-
-
         window.addEventListener('action-performed', event => {
             Swal.fire({
 
@@ -306,7 +308,7 @@
 
                 showConfirmButton: true,
 
-                });
+            });
         })
     </script>
     @stack('modals')

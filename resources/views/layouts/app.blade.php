@@ -45,7 +45,7 @@
 
     <!-- preloader -->
     <div class="preloader">
-        <img src="/assets/images/knn.jpg" alt="logo">
+        <img style="max-width: 100px" src="{{ asset('public_content/image/loader_logo.png') }}" alt="logo">
         <div class="preloader-icon"></div>
     </div>
     <!-- ./ preloader -->
@@ -541,7 +541,8 @@
     <div class="menu">
         <div class="menu-header">
             <a href="/" class="menu-header-logo">
-                KNN
+                <img style="max-width: 60px" src="{{ asset('public_content/image/loader_logo.png') }}"
+                    alt="KNN Logo">
             </a>
             <a href="/" class="btn btn-sm menu-close-btn">
                 <i class="bi bi-x"></i>
@@ -631,7 +632,8 @@
             </div>
             <!-- Logo -->
             <a href="index.html" class="logo">
-                <img width="100" src="https://vetra.laborasyon.com/assets/images/logo.svg" alt="logo">
+                <img style="max-width: 60px" src="{{ asset('public_content/image/loader_logo.png') }}"
+                    alt="logo">
             </a>
             <!-- ./ Logo -->
             <div class="page-title">@stack('title')</div>

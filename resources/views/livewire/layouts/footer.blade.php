@@ -7,9 +7,8 @@
                     <div class="footer-box box-1">
                         <h6 class="fb-title">ABOUT US</h6>
                         <div class="fb-iner">
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have
-                                suffered alteration in some form, by injected humour, or randomised words which
-                                don't look even slightly believable.</p>
+                            <p>Welcome to our online store! We’re passionate about providing high-quality products and
+                                exceptional customer service.</p>
                         </div>
                     </div>
                 </div>
@@ -19,12 +18,12 @@
                         <div class="fb-iner">
                             <ul>
                                 <li><i class="ion-ios-location-outline"></i>
-                                    <p>c/o Giunti International Division Via G.B. Pirelli, 30 20124 Milan</p>
+                                    <p>KNN, Kabul, Afghanistan</p>
                                 </li>
                                 <li><i class="ion-ios-telephone-outline"></i>
-                                    <p>+025 2155 3255</p>
+                                    <p>+93202399923</p>
                                 </li>
-                                <li><i class="ion-ios-email-outline"></i><a href="index_2.html#">info@gmail.com</a>
+                                <li><i class="ion-ios-email-outline"></i><a href="#">info@knn.com</a>
                                 </li>
                             </ul>
                         </div>
@@ -35,10 +34,12 @@
                         <h6 class="fb-title">CATEGORIES</h6>
                         <div class="fb-iner">
                             <ul class="footer-links">
-                                @foreach($categories as $category)
-                                <li><a href="/categories/{{ $category->id }}/products">{{ $category->name }}</a></li>
+                                @foreach ($categories as $category)
+                                    <li><a href="/categories/{{ $category->id }}/products">{{ $category->name }}</a>
+                                    </li>
                                 @endforeach
-                              <li><a href="/products" class="text-dark"><i class="bi bi-eye-fill"></i> See More . . .</a></li>
+                                <li><a href="/products" class="text-dark"><i class="bi bi-eye-fill"></i> See More . .
+                                        .</a></li>
                             </ul>
                         </div>
                     </div>
@@ -49,14 +50,14 @@
                         <div class="fb-iner">
                             <ul class="footer-links">
                                 @auth
-                                <li><a href="/orders">Orders</a></li>
-                                <li><a href="/wishlist">Wishlist</a></li>
+                                    <li><a href="/orders">Orders</a></li>
+                                    <li><a href="/wishlist">Wishlist</a></li>
                                 @endauth
                                 @guest
-                                <li><a href="/login">Log In</a></li>
-                                <li><a href="/register">Register</a></li>
+                                    <li><a href="/login">Log In</a></li>
+                                    <li><a href="/register">Register</a></li>
                                 @endguest
-                                
+
                             </ul>
                         </div>
                     </div>
