@@ -16,37 +16,19 @@ class CategorySeeder extends Seeder
     public function run()
     {
         Category::create([
-            'name' => 'Foodgrains, Oil & Masala'
+            'name' => 'Electronics'
         ]);
         Category::create([
-            'name' => 'Fruits & Vegetables'
+            'name' => 'Home Appliances'
         ]);
         Category::create([
-            'name' => 'Meat, Breakfast & Diary'
+            'name' => 'Fashion'
         ]);
         Category::create([
-            'name' => 'Canned Food, Pickles & Ketchups'
+            'name' => 'Books'
         ]);
         Category::create([
-            'name' => 'Snacks, Cookies & Candies'
-        ]);
-        Category::create([
-            'name' => 'Beverages & Cigarettes'
-        ]);
-        Category::create([
-            'name' => 'Cleaning & Households'
-        ]);
-        Category::create([
-            'name' => 'Beauty & Care, Baby Needs'
-        ]);
-        Category::create([
-            'name' => 'Health & Nutrition'
-        ]);
-        Category::create([
-            'name' => 'Aid Packages'
-        ]);
-        Category::create([
-            'name' => 'Dry Fruits'
+            'name' => 'Toys & Games'
         ]);
     }
 }
